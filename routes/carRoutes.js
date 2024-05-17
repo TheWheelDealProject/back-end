@@ -1,6 +1,6 @@
 const express = require('express'); // dont change this line 
 const router = express.Router();// dont change this line
-const { getAllCars, addCar, deleteCar, EditCar, getCar, handleServerError} = require('../controller/carCtrl');// here you can importe more functions 
+const { getAllCars, addCar, deleteCar, EditCar, getCar, handleServerError } = require('../controller/carCtrl');// here you can importe more functions 
 
 
 // GET EndPoints
@@ -14,15 +14,15 @@ router.post('/addCar', addCar);
 
 
 //delete EndPoints
-router.delete('/deleteCar/:id',deleteCar);
+router.delete('/deleteCar/:id', deleteCar);
 
 
 //EditCar EndPoints
-router.put('/editCar/:id',EditCar);
+router.put('/editCar/:id', EditCar);
 
 
 //GETCAR EndPoint
-router.get('/getCar/:id',getCar)
+router.get('/getCar/:id', getCar)
 
 
 
