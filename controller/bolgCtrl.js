@@ -14,11 +14,11 @@ const getAllBlogs = async (req, res) => {
 };
 
 const addBlog = (req, res) => {
-  const { id, title, author, date, time, imgUrl, description, quote } = req.body;
+  const {title, author, date, time, imgurl, description, quote } = req.body;
 
   // Insert the blog into the database
-  const query = 'INSERT INTO blogs (id, title, author, date, time, imgUrl, description, quote) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
-  const values = [id, title, author, date, time, imgUrl, description, quote];
+  const query = 'INSERT INTO blogs (title, author, date, time, imgurl, description, quote) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *';
+  const values = [title, author, date, time, imgurl, description, quote];
   client
     .query(query, values)
     .then((result) => {
