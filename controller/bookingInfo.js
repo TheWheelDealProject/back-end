@@ -15,21 +15,21 @@ const getAllBookingInfo = async (req, res) => {
 
 
 const addBookingInfo = (req, res) => {
-    const { firstName, lastName, email, phoneNo, fromAddress, toAddress, numOfPersons, numOfBags, journeyDate, journeyTime, description } = req.body;
-  
-    // Insert the booking info into the database
-    const query = 'INSERT INTO bookingInfo (firstName, lastName, email, phoneNo, fromAddress, toAddress, numOfPersons, numOfBags, journeyDate, journeyTime, description) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *';
-    const values = [firstName, lastName, email, phoneNo, fromAddress, toAddress, numOfPersons, numOfBags, journeyDate, journeyTime, description];
-    client
-      .query(query, values)
-      .then((result) => {
-        const insertedBookingInfo = result.rows[0]; // Assuming only one row is returned
-        res.status(200).json(insertedBookingInfo);
-      })
-      .catch((error) => {
-        handleServerError(error, req, res);
-      })
-  };
+  const { firstname, lastname, email, phoneno, fromaddress, toaddress, numofpersons, numofbags, journeydate, journeytime, description } = req.body;
+
+  // Insert the booking info into the database
+  const query = 'INSERT INTO bookingInfo (firstname, lastname, email, phoneno, fromaddress, toaddress, numofpersons, numofbags, journeydate, journeytime, description) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *';
+  const values = [firstname, lastname, email, phoneno, fromaddress, toaddress, numofpersons, numofbags, journeydate, journeytime, description];
+  client
+    .query(query, values)
+    .then((result) => {
+      const insertedBookingInfo = result.rows[0]; // Assuming only one row is returned
+      res.status(200).json(insertedBookingInfo);
+    })
+    .catch((error) => {
+      handleServerError(error, req, res);
+    })
+};
 
 
 const deleteBookingInfo = async (req, res) => {

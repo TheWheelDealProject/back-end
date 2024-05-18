@@ -19,15 +19,18 @@ app.use(cookieParser());
 
 
 
-// your work under here..
-const blogRouter = require('./routes/blogRoutes'); // importe the blogRoutes
+const blogRouter = require('./routes/blogRoutes'); 
 const carRouter = require('./routes/carRoutes');
 const bookingInfoRouter = require('./routes/bookingInfoRoutes');
+const contactRouter = require('./routes/contactRoutes');
+const commentRouter = require('./routes/commentRoutes');
 
 
-app.use('/', blogRouter); // this is an example...
-app.use('/', carRouter); // this is an example...
-app.use('/', bookingInfoRouter ); // this is an example...
+app.use('/', blogRouter); 
+app.use('/', carRouter); 
+app.use('/', bookingInfoRouter ); 
+app.use('/', contactRouter ); 
+app.use('/',  commentRouter); 
 
 
 
