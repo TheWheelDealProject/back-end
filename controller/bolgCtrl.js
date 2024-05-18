@@ -49,10 +49,10 @@ const deleteBlog = async (req, res) => {
 
 
 const editBlog = (req,res)=>{
-  const {title, author, date, time, imgUrl, description, quote } = req.body;
+  const {title, author, date, time, imgurl, description, quote } = req.body;
   const id = req.params.id;
-  const sql =`UPDATE blogs SET title=$1, author=$2, date=$3, time=$4, imgUrl=$5, description=$6, quote=$7 where id=${id} RETURNING *`;
- const values = [title,author,date,time,imgUrl,description,quote]
+  const sql =`UPDATE blogs SET title=$1, author=$2, date=$3, time=$4, imgurl=$5, description=$6, quote=$7 where id=${id} RETURNING *`;
+ const values = [title,author,date,time,imgurl,description,quote]
  client.query(sql,values)
  .then((data)=>{
   if (data.rows.length > 0) {

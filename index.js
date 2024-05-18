@@ -22,10 +22,12 @@ app.use(cookieParser());
 // your work under here..
 const blogRouter = require('./routes/blogRoutes'); // importe the blogRoutes
 const carRouter = require('./routes/carRoutes');
+const bookingInfoRouter = require('./routes/bookingInfoRoutes');
 
 
 app.use('/', blogRouter); // this is an example...
 app.use('/', carRouter); // this is an example...
+app.use('/', bookingInfoRouter ); // this is an example...
 
 
 

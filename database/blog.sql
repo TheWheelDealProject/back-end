@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS blogs (
   author VARCHAR(255),
   date VARCHAR(20),
   time VARCHAR(10),
-  imgUrl VARCHAR(2555),
+  imgurl VARCHAR(2555),
   description TEXT,
   quote TEXT
 );

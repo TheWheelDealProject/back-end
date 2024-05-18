@@ -1,6 +1,6 @@
 const express = require('express'); // dont change this line 
 const router = express.Router();// dont change this line
-const { getAllCars, addCar, deleteCar, EditCar, getCar, handleServerError } = require('../controller/carCtrl');// here you can importe more functions 
+const { getAllCars, addCar, deleteCar, EditCar, getCar } = require('../controller/carCtrl');// here you can importe more functions 
 
 
 // GET EndPoints
@@ -26,7 +26,7 @@ router.get('/getCar/:id', getCar)
 
 
 
-router.use(handleServerError);
+// router.use(handleServerError);
 
 
 

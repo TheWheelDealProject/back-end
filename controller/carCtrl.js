@@ -51,10 +51,10 @@ const deleteCar = async (req, res) => {
 
 
 const EditCar = (req, res) => {
-  const { brand, rating, carName, imgUrl, model, price, speed, gps, seatType, automatic, description } = req.body;
+  const { brand, rating, carname, imgurl, model, price, speed, gps, seattype, automatic, description } = req.body;
   const id = req.params.id;
-  const sql = `UPDATE cars SET brand=$1, rating=$2, carName=$3, imgUrl=$4, model=$5,price=$6,speed=$7,gps=$8,seatType=$9,automatic=$10, description=$11 where id=${id} RETURNING *`;
-  const values = [brand, rating, carName, imgUrl, model, price, speed, gps, seatType, automatic, description];
+  const sql = `UPDATE cars SET brand=$1, rating=$2, carname=$3, imgurl=$4, model=$5,price=$6,speed=$7,gps=$8,seattype=$9,automatic=$10, description=$11 where id=${id} RETURNING *`;
+  const values = [brand, rating, carname, imgurl, model, price, speed, gps, seattype, automatic, description];
   client.query(sql, values)
     .then((data) => {
       if (data.rows.length > 0) {
@@ -98,4 +98,4 @@ function handleServerError(err, req, res) {
 
 
 
-module.exports = { getAllCars, addCar, deleteCar, EditCar, getCar, handleServerError }; // here you can add more functions like updateBlog..itc
+module.exports = { getAllCars, addCar, deleteCar, EditCar, getCar }; // here you can add more functions like updateBlog..itc
